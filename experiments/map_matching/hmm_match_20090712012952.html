@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a93690e5b2e658b49c26556d520f9ce8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a93690e5b2e658b49c26556d520f9ce8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a93690e5b2e658b49c26556d520f9ce8 = L.map(
+                "map_a93690e5b2e658b49c26556d520f9ce8",
+                {
+                    center: [39.975697967741944, 116.33080293548389],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d4daa81afeeb36d258621aa7464e7941 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d4daa81afeeb36d258621aa7464e7941.addTo(map_a93690e5b2e658b49c26556d520f9ce8);
+        
+    
+            var poly_line_2f53e07fe0c95e9ee397a28675f697ea = L.polyline(
+                [[39.97566, 116.330822], [39.975661, 116.330826], [39.975661, 116.330826], [39.975661, 116.330826], [39.97566, 116.330845], [39.975709, 116.330817], [39.975735, 116.330831], [39.975746, 116.330814], [39.975751, 116.330818], [39.975751, 116.330818], [39.975752, 116.330816], [39.975753, 116.330805], [39.975753, 116.330805], [39.975755, 116.330809], [39.97584, 116.330874], [39.975868, 116.330852], [39.975965, 116.330709], [39.975475, 116.330698], [39.975522, 116.330692], [39.975661, 116.330632], [39.975581, 116.330705], [39.975655, 116.330734], [39.975768, 116.330811], [39.975684, 116.330856], [39.975671, 116.330883], [39.9757, 116.330829], [39.975674, 116.330824], [39.975646, 116.330835], [39.97564, 116.330832], [39.975639, 116.330825], [39.97564, 116.330822]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a93690e5b2e658b49c26556d520f9ce8);
+        
+    
+            poly_line_2f53e07fe0c95e9ee397a28675f697ea.bindTooltip(
+                `<div>
+                     Raw GPS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ce22c335aa52b772d421c1e34df1db33 = L.polyline(
+                [[39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9769195, 116.3300757], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9753534, 116.3304346], [39.9754194, 116.3317893], [39.9754194, 116.3317893], [39.9754194, 116.3317893], [39.9754194, 116.3317893], [39.9754194, 116.3317893], [39.9754194, 116.3317893]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a93690e5b2e658b49c26556d520f9ce8);
+        
+    
+            poly_line_ce22c335aa52b772d421c1e34df1db33.bindTooltip(
+                `<div>
+                     HMM matched
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ddb3180af1d0592c7763da757ed57a9b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="
+    position: fixed;
+    bottom:50px;
+    left:50px;
+    width:170px;
+    background:white;
+    border:2px solid grey;
+    z-index:9999;
+    padding:10px;">
+    <b>Forward HMM</b><br>
+    <span style='color:red;'>━━</span> Raw GPS<br>
+    <span style='color:blue;'>━━</span> HMM
+    </div>
+    
+    
+            <div class="folium-map" id="map_ddb3180af1d0592c7763da757ed57a9b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ddb3180af1d0592c7763da757ed57a9b = L.map(
+                "map_ddb3180af1d0592c7763da757ed57a9b",
+                {
+                    center: [51.401891606382975, 0.18134914255319148],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9adf4d230e97e05a6d8af69ca599a783 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9adf4d230e97e05a6d8af69ca599a783.addTo(map_ddb3180af1d0592c7763da757ed57a9b);
+        
+    
+            var poly_line_396ac369487a985d090026dea02e7e41 = L.polyline(
+                [[51.4020546, 0.1806558], [51.402056, 0.1806588], [51.4020547, 0.180671], [51.4020656, 0.1806843], [51.4020681, 0.1806996], [51.4020675, 0.1807133], [51.4020697, 0.1807263], [51.4020798, 0.1807502], [51.4020834, 0.1807711], [51.4020835, 0.18079], [51.4020828, 0.1808081], [51.4020803, 0.1808239], [51.4020774, 0.1808417], [51.4020756, 0.1808591], [51.4020766, 0.180877], [51.402079, 0.1808935], [51.4020772, 0.1809124], [51.4020763, 0.1809268], [51.4020724, 0.1809409], [51.4020676, 0.1809591], [51.4020647, 0.180977], [51.402058, 0.1809926], [51.4020544, 0.1810081], [51.4020479, 0.1810221], [51.4020317, 0.1810362], [51.4020171, 0.1810522], [51.4020006, 0.1810593], [51.4019921, 0.1810744], [51.4019877, 0.1810859], [51.4019699, 0.1810966], [51.4019619, 0.1811143], [51.4019572, 0.1811306], [51.4019496, 0.1811438], [51.4019448, 0.1811615], [51.4019414, 0.1811774], [51.4019384, 0.1811935], [51.4019348, 0.1812041], [51.4019313, 0.1812141], [51.4019266, 0.1812224], [51.4019264, 0.1812334], [51.4019227, 0.1812477], [51.4019187, 0.1812499], [51.4019135, 0.1812595], [51.4019159, 0.1812762], [51.4019139, 0.1812888], [51.401908, 0.1813049], [51.4019012, 0.1813197], [51.4018918, 0.1813367], [51.4018894, 0.18135], [51.4018844, 0.1813647], [51.4018786, 0.1813812], [51.4018742, 0.1813977], [51.4018695, 0.1814114], [51.4018737, 0.1814304], [51.4018704, 0.1814445], [51.4018694, 0.1814616], [51.4018656, 0.1814773], [51.4018675, 0.1815036], [51.401868, 0.1815221], [51.401861, 0.1815402], [51.4018616, 0.181552], [51.4018568, 0.1815704], [51.4018544, 0.1815874], [51.4018499, 0.1816024], [51.4018303, 0.1815973], [51.4018293, 0.1816219], [51.4018132, 0.1816275], [51.4017959, 0.1816294], [51.4017841, 0.1816393], [51.4017762, 0.1816532], [51.4017702, 0.1816685], [51.4017581, 0.181681], [51.4017517, 0.1816981], [51.4017555, 0.181728], [51.4017515, 0.1817463], [51.4017477, 0.181781], [51.4017389, 0.1818028], [51.4017381, 0.1818232], [51.4017246, 0.1818458], [51.4017178, 0.1818668], [51.4017103, 0.1818806], [51.4017045, 0.1818921], [51.4016918, 0.1819051], [51.4016831, 0.1819146], [51.4016761, 0.1819252], [51.401668, 0.1819376], [51.4016636, 0.1819502], [51.4016574, 0.1819602], [51.4016508, 0.181971], [51.4016446, 0.1819825], [51.4016384, 0.1819946], [51.4016293, 0.182008], [51.4016242, 0.182019], [51.4016211, 0.1820259]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ddb3180af1d0592c7763da757ed57a9b);
+        
+    
+            poly_line_396ac369487a985d090026dea02e7e41.bindTooltip(
+                `<div>
+                     Raw GPS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
